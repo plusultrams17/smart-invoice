@@ -5,7 +5,9 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Textarea } from "@/components/ui/textarea";
 import { Modal } from "@/components/ui/modal";
-import { Sparkles } from "lucide-react";
+import { UpgradeModal } from "@/components/upgrade/upgrade-modal";
+import { Sparkles, Lock } from "lucide-react";
+import { useAuth } from "@/contexts/auth-context";
 import type { InvoiceLineItem } from "@/types/invoice";
 
 interface AiAssistButtonProps {
@@ -14,9 +16,19 @@ interface AiAssistButtonProps {
 
 export function AiAssistButton({ onSuggestion }: AiAssistButtonProps) {
   const t = useTranslations("invoice.ai");
+  const { canUseAi } = useAuth();
   const [isOpen, setIsOpen] = useState(false);
+  const [showUpgrade, setShowUpgrade] = useState(false);
   const [prompt, setPrompt] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+
+  const handleClick = () => {
+    if (!canUseAi()) {
+      setShowUpgrade(true);
+      return;
+    }
+    setIsOpen(true);
+  };
 
   const handleGenerate = async () => {
     if (!prompt.trim()) return;
@@ -46,6 +58,8 @@ export function AiAssistButton({ onSuggestion }: AiAssistButtonProps) {
     }
   };
 
+  const isLocked = !canUseAi();
+
   return (
     <>
       <Button
@@ -53,11 +67,26 @@ export function AiAssistButton({ onSuggestion }: AiAssistButtonProps) {
         variant="secondary"
         size="sm"
         className="gap-2"
-        onClick={() => setIsOpen(true)}
+        onClick={handleClick}
       >
-        <Sparkles className="h-4 w-4 text-accent-500" />
+        {isLocked ? (
+          <Lock className="h-4 w-4 text-gray-400" />
+        ) : (
+          <Sparkles className="h-4 w-4 text-accent-500" />
+        )}
         {t("assist")}
+        {isLocked && (
+          <span className="ml-1 rounded bg-primary-100 px-1.5 py-0.5 text-[10px] font-semibold text-primary-700">
+            PRO
+          </span>
+        )}
       </Button>
+
+      <UpgradeModal
+        isOpen={showUpgrade}
+        onClose={() => setShowUpgrade(false)}
+        reason="ai_feature"
+      />
 
       <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} title={t("assist")}>
         <div className="space-y-4">

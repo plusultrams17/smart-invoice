@@ -174,6 +174,22 @@ const styles = StyleSheet.create({
     color: "#6b7280",
     lineHeight: 1.5,
   },
+  watermark: {
+    position: "absolute",
+    top: "45%",
+    left: 0,
+    right: 0,
+    alignItems: "center",
+    justifyContent: "center",
+    transform: "rotate(-45deg)",
+  },
+  watermarkText: {
+    fontSize: 48,
+    color: "#e5e7eb",
+    fontWeight: 700,
+    opacity: 0.5,
+    textAlign: "center",
+  },
 });
 
 function formatCurrency(amount: number): string {
@@ -182,12 +198,19 @@ function formatCurrency(amount: number): string {
 
 interface InvoicePdfDocumentProps {
   invoice: Invoice;
+  showWatermark?: boolean;
 }
 
-export function InvoicePdfDocument({ invoice }: InvoicePdfDocumentProps) {
+export function InvoicePdfDocument({ invoice, showWatermark = false }: InvoicePdfDocumentProps) {
   return (
     <Document>
       <Page size="A4" style={styles.page}>
+        {/* Watermark for free plan */}
+        {showWatermark && (
+          <View style={styles.watermark} fixed>
+            <Text style={styles.watermarkText}>Smart Invoice - Free</Text>
+          </View>
+        )}
         {/* Header */}
         <View style={styles.header}>
           <View>

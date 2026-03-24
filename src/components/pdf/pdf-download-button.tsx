@@ -4,6 +4,8 @@ import { useState, useCallback } from "react";
 import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Download } from "lucide-react";
+import { useAuth } from "@/contexts/auth-context";
+import { PLANS } from "@/lib/constants";
 import type { Invoice } from "@/types/invoice";
 
 interface PdfDownloadButtonProps {
@@ -12,7 +14,10 @@ interface PdfDownloadButtonProps {
 
 export function PdfDownloadButton({ invoice }: PdfDownloadButtonProps) {
   const t = useTranslations("invoice.pdf");
+  const { user } = useAuth();
   const [isLoading, setIsLoading] = useState(false);
+
+  const showWatermark = PLANS[user?.plan || "free"].hasWatermark;
 
   const handleDownload = useCallback(async () => {
     setIsLoading(true);
@@ -24,7 +29,7 @@ export function PdfDownloadButton({ invoice }: PdfDownloadButtonProps) {
       const React = await import("react");
 
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const element = React.createElement(InvoicePdfDocument, { invoice }) as any;
+      const element = React.createElement(InvoicePdfDocument, { invoice, showWatermark }) as any;
       const blob = await pdf(element).toBlob();
 
       const url = URL.createObjectURL(blob);
@@ -40,7 +45,7 @@ export function PdfDownloadButton({ invoice }: PdfDownloadButtonProps) {
     } finally {
       setIsLoading(false);
     }
-  }, [invoice]);
+  }, [invoice, showWatermark]);
 
   return (
     <Button

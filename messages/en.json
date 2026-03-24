@@ -2,7 +2,7 @@
   "common": {
     "appName": "Smart Invoice",
     "login": "Login",
-    "signup": "Get Started Free",
+    "signup": "Start 14-Day Free Trial",
     "logout": "Logout",
     "save": "Save",
     "cancel": "Cancel",
@@ -22,77 +22,141 @@
   },
   "landing": {
     "hero": {
-      "title": "Invoicing,\nmade smarter.",
-      "subtitle": "AI-powered invoice creation for freelancers and small businesses. Create professional invoices in seconds.",
-      "cta": "Get Started Free",
-      "secondaryCta": "Learn More"
+      "title": "Just type the job name.\nYour invoice is done.",
+      "subtitle": "AI-powered invoice tool built for construction & painting businesses. Auto-generate line items from project names. Fully compliant with Japan's Invoice System.",
+      "cta": "Start 14-Day Free Trial",
+      "secondaryCta": "See Features",
+      "noCreditCard": "No credit card required"
+    },
+    "trust": {
+      "title": "Construction invoice creation time:",
+      "highlight": "15 min → 2 min",
+      "suffix": "average",
+      "stats": [
+        { "value": "87%", "label": "reduction in data entry" },
+        { "value": "1,600+", "label": "industry cases informing AI" },
+        { "value": "10 sec", "label": "to auto-generate line items" }
+      ]
+    },
+    "painPoints": {
+      "title": "Sound familiar?",
+      "items": [
+        {
+          "problem": "Typing the same line items over and over",
+          "solution": "Just type \"exterior painting\" and get paint, scaffolding, masking, and washing items auto-generated."
+        },
+        {
+          "problem": "Worrying about Invoice System compliance",
+          "solution": "Registration numbers and tax categories are applied automatically. Create compliant invoices every time."
+        },
+        {
+          "problem": "Managing invoices in Excel is painful",
+          "solution": "Dashboard with full invoice management. Track status and analyze revenue in one click."
+        }
+      ]
     },
     "features": {
       "title": "Features",
-      "subtitle": "Simplify your invoicing workflow.",
+      "subtitle": "Optimized for construction & painting workflows.",
       "ai": {
-        "title": "AI Invoice Assistant",
-        "description": "AI suggests invoice line items based on your project details. Save time on data entry."
+        "title": "Industry-Specific AI Assistant",
+        "description": "Type \"exterior painting\" or \"roof repair\" and get paint names, scaffolding, masking, and pressure washing items auto-generated. Built on 1,600+ industry cases."
       },
       "templates": {
-        "title": "Professional Templates",
-        "description": "Choose from industry-tailored templates. Fully compliant with Japan's Invoice System."
+        "title": "Construction Invoice Templates",
+        "description": "Templates optimized for construction estimates and invoices. Fully compliant with Japan's Invoice System requirements."
       },
       "pdf": {
         "title": "One-Click PDF Export",
-        "description": "Download your invoices as print-ready PDFs instantly."
+        "description": "Download invoices as print-ready PDFs instantly. View and share from your phone on the job site."
       },
       "manage": {
-        "title": "Unified Dashboard",
-        "description": "Manage all invoices in one place. Track payment status and analyze revenue at a glance."
+        "title": "Job & Client Management",
+        "description": "Organize invoices by project and client. Track outstanding amounts to prevent missed collections."
       }
+    },
+    "howItWorks": {
+      "title": "3 Simple Steps",
+      "steps": [
+        {
+          "step": "1",
+          "title": "Enter the job details",
+          "description": "Type something like \"exterior painting, 2-story house.\""
+        },
+        {
+          "step": "2",
+          "title": "AI generates line items",
+          "description": "Paint, scaffolding, masking, and washing items are filled in automatically."
+        },
+        {
+          "step": "3",
+          "title": "Export & send PDF",
+          "description": "Review and download PDF. Send by email in one click."
+        }
+      ]
     },
     "pricing": {
       "title": "Pricing",
-      "subtitle": "Choose the plan that fits your needs.",
+      "subtitle": "Try all features free for 14 days.",
       "monthly": "/month",
+      "trial": "14-day free trial",
       "free": {
         "name": "Free",
         "price": "¥0",
         "period": "Forever free",
         "cta": "Get Started Free",
         "features": [
-          "Up to 100 invoices/month",
-          "3 basic templates",
-          "PDF export",
+          "Up to 5 invoices/month",
+          "1 basic template",
+          "PDF export (with watermark)",
           "Invoice management dashboard"
+        ],
+        "limitations": [
+          "No AI features",
+          "1 template only"
         ]
       },
       "pro": {
         "name": "Pro",
-        "price": "¥980",
-        "period": "/month",
-        "cta": "Start Pro Plan",
-        "popular": "Popular",
+        "price": "¥1,480",
+        "period": "/month (tax incl.)",
+        "cta": "Start 14-Day Free Trial",
+        "popular": "Recommended",
         "features": [
           "Unlimited invoices",
           "All templates",
           "AI invoice assistant",
+          "Watermark-free PDFs",
+          "Industry-specific templates",
           "Priority support"
-        ]
-      },
-      "team": {
-        "name": "Team",
-        "price": "¥2,980",
-        "period": "/month",
-        "cta": "Start Team Plan",
-        "features": [
-          "All Pro features",
-          "Up to 5 team members",
-          "Team invoice management",
-          "API access"
         ]
       }
     },
+    "faq": {
+      "title": "FAQ",
+      "items": [
+        {
+          "question": "Will I be charged during the free trial?",
+          "answer": "No. The 14-day trial is completely free. Cancel anytime during the trial period at no cost."
+        },
+        {
+          "question": "Is it compliant with Japan's Invoice System?",
+          "answer": "Yes. Qualified invoice issuer registration numbers are built in. Tax rate classification is also supported."
+        },
+        {
+          "question": "Can I use it outside construction?",
+          "answer": "Yes. AI auto-generation is optimized for construction & painting, but manual entry works for any industry."
+        },
+        {
+          "question": "Is my data secure?",
+          "answer": "All data is encrypted at rest and in transit via SSL."
+        }
+      ]
+    },
     "cta": {
-      "title": "Ready to streamline your invoicing?",
-      "subtitle": "Start free and upgrade as your business grows.",
-      "button": "Get Started Free"
+      "title": "How many hours do you spend on invoices each month?",
+      "subtitle": "With Smart Invoice, just type the job name. Try free for 14 days.",
+      "button": "Start 14-Day Free Trial"
     }
   },
   "nav": {
@@ -107,6 +171,10 @@
   "dashboard": {
     "title": "Dashboard",
     "welcome": "Welcome back, {name}",
+    "usage": "Monthly Usage",
+    "usageOf": "{count} / {limit} invoices",
+    "usageUnlimited": "Unlimited",
+    "upgradePrompt": "Upgrade to Pro to remove limits",
     "stats": {
       "totalRevenue": "Total Revenue",
       "monthlyInvoices": "This Month",
@@ -123,6 +191,8 @@
     "edit": "Edit Invoice",
     "detail": "Invoice Detail",
     "deleteConfirm": "Are you sure you want to delete this invoice? This action cannot be undone.",
+    "limitReached": "You've reached your free plan limit",
+    "limitDescription": "Upgrade to Pro for unlimited invoice creation.",
     "status": {
       "draft": "Draft",
       "sent": "Sent",
@@ -163,8 +233,10 @@
     "ai": {
       "assist": "AI Auto-fill",
       "generating": "AI is generating...",
-      "prompt": "Describe your project",
-      "promptPlaceholder": "e.g., Designed and developed a website frontend."
+      "prompt": "Describe the job or project",
+      "promptPlaceholder": "e.g., Exterior painting, 2-story house\ne.g., Roof repair, slate tiles\ne.g., Website design and development",
+      "proOnly": "AI is a Pro plan feature",
+      "upgradeToUse": "Upgrade to use AI"
     },
     "pdf": {
       "preview": "Preview",
@@ -176,7 +248,8 @@
     "title": "Choose a Template",
     "subtitle": "Select a design for your invoice.",
     "select": "Select Template",
-    "selected": "Selected"
+    "selected": "Selected",
+    "proOnly": "Pro plan only"
   },
   "settings": {
     "title": "Settings",
@@ -185,12 +258,38 @@
     "currentPlan": "Current Plan",
     "upgrade": "Upgrade",
     "language": "Language",
-    "languageDescription": "Change the display language."
+    "languageDescription": "Change the display language.",
+    "manageBilling": "Manage billing",
+    "cancelSubscription": "Cancel subscription"
+  },
+  "upgrade": {
+    "title": "Upgrade to Pro",
+    "subtitle": "Unlock all features and supercharge your invoicing.",
+    "benefit1": "Unlimited invoice creation",
+    "benefit2": "AI auto-fill generates line items instantly",
+    "benefit3": "Watermark-free professional PDFs",
+    "benefit4": "All templates available",
+    "cta": "Start 14-Day Free Trial",
+    "price": "¥1,480/month (tax incl.)",
+    "guarantee": "14-day free trial. Cancel anytime."
   },
   "auth": {
     "loginTitle": "Login",
     "loginSubtitle": "Sign in to manage your invoices.",
     "googleLogin": "Sign in with Google",
-    "terms": "By signing in, you agree to our Terms of Service and Privacy Policy."
+    "terms": "By signing in, you agree to our {termsLink} and {privacyLink}.",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "legal": {
+    "terms": "Terms of Service",
+    "privacy": "Privacy Policy",
+    "tokushoho": "Specified Commercial Transactions Act",
+    "company": "Company"
+  },
+  "footer": {
+    "legal": "Legal",
+    "product": "Product",
+    "support": "Support"
   }
 }

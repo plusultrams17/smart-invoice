@@ -28,15 +28,32 @@ export default function SettingsPage() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ plan: planId }),
     });
-    await res.json();
+    const data = await res.json();
 
-    // Mock: directly update plan instead of redirecting to Stripe
-    updatePlan(planId as "free" | "pro" | "team");
+    if (data.url && data.url !== "#mock-checkout") {
+      window.location.href = data.url;
+      return;
+    }
+
+    // Mock: directly update plan
+    updatePlan(planId as "free" | "pro");
     alert(
       locale === "ja"
         ? `${PLANS[planId as keyof typeof PLANS].name.ja}プランにアップグレードしました！(モック)`
         : `Upgraded to ${PLANS[planId as keyof typeof PLANS].name.en} plan! (Mock)`
     );
+  };
+
+  const handleManageBilling = async () => {
+    const res = await fetch("/api/stripe/portal", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ customerId: user?.id }),
+    });
+    const data = await res.json();
+    if (data.url) {
+      window.location.href = data.url;
+    }
   };
 
   return (
@@ -95,28 +112,31 @@ export default function SettingsPage() {
           </div>
         </CardHeader>
         <CardContent>
-          <div className="grid gap-4 sm:grid-cols-3">
+          <div className="grid gap-4 sm:grid-cols-2">
             {Object.values(PLANS).map((plan) => {
               const isCurrentPlan = user?.plan === plan.id;
+              const isPro = plan.id === "pro";
               return (
                 <div
                   key={plan.id}
                   className={cn(
-                    "rounded-xl border p-4",
+                    "rounded-xl border p-5",
                     isCurrentPlan
-                      ? "border-primary-600 bg-primary-50"
-                      : "border-gray-200"
+                      ? "border-primary-600 bg-primary-50 ring-1 ring-primary-600"
+                      : isPro
+                        ? "border-primary-200 bg-white"
+                        : "border-gray-200"
                   )}
                 >
                   <div className="flex items-center gap-2">
-                    {plan.id === "pro" && (
+                    {isPro && (
                       <Crown className="h-4 w-4 text-primary-600" />
                     )}
                     <h3 className="font-semibold text-gray-900">
                       {plan.name[locale]}
                     </h3>
                   </div>
-                  <p className="mt-1 text-2xl font-bold text-gray-900">
+                  <p className="mt-2 text-2xl font-bold text-gray-900">
                     {formatCurrency(plan.price, locale)}
                     {plan.price > 0 && (
                       <span className="text-sm font-normal text-gray-500">
@@ -124,7 +144,7 @@ export default function SettingsPage() {
                       </span>
                     )}
                   </p>
-                  <ul className="mt-3 space-y-1.5">
+                  <ul className="mt-4 space-y-2">
                     {plan.features[locale].map((feature, i) => (
                       <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
                         <Check className="mt-0.5 h-3 w-3 shrink-0 text-primary-600" />
@@ -132,6 +152,15 @@ export default function SettingsPage() {
                       </li>
                     ))}
                   </ul>
+                  {"limitations" in plan && plan.limitations && (
+                    <ul className="mt-2 space-y-1">
+                      {(plan.limitations as unknown as { ja: string[]; en: string[] })[locale].map((limitation, i) => (
+                        <li key={i} className="text-xs text-gray-400">
+                          &bull; {limitation}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
                   <Button
                     variant={isCurrentPlan ? "secondary" : "primary"}
                     size="sm"
@@ -149,6 +178,25 @@ export default function SettingsPage() {
               );
             })}
           </div>
+
+          {/* Billing management for pro users */}
+          {user?.plan === "pro" && (
+            <div className="mt-6 flex items-center justify-between rounded-lg border border-gray-200 p-4">
+              <div>
+                <p className="text-sm font-medium text-gray-900">
+                  {t("manageBilling")}
+                </p>
+                <p className="text-xs text-gray-500 mt-0.5">
+                  {locale === "ja"
+                    ? "Stripeでお支払い情報を管理"
+                    : "Manage payment info via Stripe"}
+                </p>
+              </div>
+              <Button variant="outline" size="sm" onClick={handleManageBilling}>
+                {t("manageBilling")}
+              </Button>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>
