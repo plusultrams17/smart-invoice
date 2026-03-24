@@ -1,0 +1,196 @@
+{
+  "common": {
+    "appName": "Smart Invoice",
+    "login": "ログイン",
+    "signup": "無料で始める",
+    "logout": "ログアウト",
+    "save": "保存",
+    "cancel": "キャンセル",
+    "delete": "削除",
+    "edit": "編集",
+    "create": "作成",
+    "download": "ダウンロード",
+    "loading": "読み込み中...",
+    "confirm": "確認",
+    "back": "戻る",
+    "next": "次へ",
+    "close": "閉じる",
+    "search": "検索",
+    "filter": "フィルター",
+    "all": "すべて",
+    "noData": "データがありません"
+  },
+  "landing": {
+    "hero": {
+      "title": "請求書作成を、\nもっとスマートに。",
+      "subtitle": "AIが請求書の作成をサポート。フリーランスと中小企業のための請求書管理ツール。",
+      "cta": "無料で始める",
+      "secondaryCta": "詳しく見る"
+    },
+    "features": {
+      "title": "主な機能",
+      "subtitle": "請求書業務をシンプルに、効率的に。",
+      "ai": {
+        "title": "AI請求書アシスタント",
+        "description": "AIがプロジェクト内容から請求書の項目を自動提案。入力の手間を大幅に削減します。"
+      },
+      "templates": {
+        "title": "プロフェッショナルなテンプレート",
+        "description": "業種に合わせた洗練されたテンプレートを選択。インボイス制度にも対応しています。"
+      },
+      "pdf": {
+        "title": "ワンクリックPDF出力",
+        "description": "作成した請求書をすぐにPDFとしてダウンロード。印刷にも最適なレイアウトです。"
+      },
+      "manage": {
+        "title": "一元管理ダッシュボード",
+        "description": "すべての請求書を一か所で管理。ステータス追跡や売上分析も簡単に確認できます。"
+      }
+    },
+    "pricing": {
+      "title": "料金プラン",
+      "subtitle": "あなたに合ったプランを選択してください。",
+      "monthly": "月額",
+      "free": {
+        "name": "フリー",
+        "price": "¥0",
+        "period": "永久無料",
+        "cta": "無料で始める",
+        "features": [
+          "月100枚まで請求書作成",
+          "基本テンプレート3種",
+          "PDF出力",
+          "請求書管理ダッシュボード"
+        ]
+      },
+      "pro": {
+        "name": "プロ",
+        "price": "¥980",
+        "period": "月額",
+        "cta": "プロプランを始める",
+        "popular": "人気",
+        "features": [
+          "無制限の請求書作成",
+          "全テンプレート利用可能",
+          "AI請求書アシスタント",
+          "優先サポート"
+        ]
+      },
+      "team": {
+        "name": "チーム",
+        "price": "¥2,980",
+        "period": "月額",
+        "cta": "チームプランを始める",
+        "features": [
+          "プロプランの全機能",
+          "5人までのチーム管理",
+          "チーム請求書管理",
+          "API連携"
+        ]
+      }
+    },
+    "cta": {
+      "title": "今すぐ請求書作成を効率化しませんか？",
+      "subtitle": "無料プランで始めて、ビジネスの成長に合わせてアップグレード。",
+      "button": "無料で始める"
+    }
+  },
+  "nav": {
+    "features": "機能",
+    "pricing": "料金",
+    "dashboard": "ダッシュボード",
+    "invoices": "請求書",
+    "templates": "テンプレート",
+    "settings": "設定",
+    "newInvoice": "新規請求書"
+  },
+  "dashboard": {
+    "title": "ダッシュボード",
+    "welcome": "おかえりなさい、{name}さん",
+    "stats": {
+      "totalRevenue": "総売上",
+      "monthlyInvoices": "今月の請求書",
+      "outstanding": "未回収金額",
+      "paidRate": "回収率"
+    },
+    "recentInvoices": "最近の請求書",
+    "viewAll": "すべて表示"
+  },
+  "invoice": {
+    "title": "請求書",
+    "list": "請求書一覧",
+    "new": "新規請求書作成",
+    "edit": "請求書を編集",
+    "detail": "請求書詳細",
+    "deleteConfirm": "この請求書を削除しますか？この操作は取り消せません。",
+    "status": {
+      "draft": "下書き",
+      "sent": "送信済み",
+      "paid": "支払済み",
+      "overdue": "期限超過",
+      "cancelled": "キャンセル"
+    },
+    "form": {
+      "clientInfo": "顧客情報",
+      "clientName": "顧客名",
+      "clientEmail": "メールアドレス",
+      "clientAddress": "住所",
+      "clientCompany": "会社名",
+      "invoiceInfo": "請求書情報",
+      "invoiceNumber": "請求書番号",
+      "issuedDate": "発行日",
+      "dueDate": "支払期限",
+      "template": "テンプレート",
+      "items": "明細",
+      "description": "品目・内容",
+      "quantity": "数量",
+      "unitPrice": "単価",
+      "amount": "金額",
+      "addItem": "項目を追加",
+      "subtotal": "小計",
+      "tax": "消費税 (10%)",
+      "total": "合計",
+      "notes": "備考",
+      "notesPlaceholder": "お振込期限、振込先口座等をご記入ください",
+      "senderInfo": "発行者情報",
+      "senderName": "氏名",
+      "senderEmail": "メールアドレス",
+      "senderAddress": "住所",
+      "senderCompany": "会社名・屋号",
+      "registrationNumber": "登録番号 (インボイス制度)",
+      "registrationPlaceholder": "T1234567890123"
+    },
+    "ai": {
+      "assist": "AIで自動入力",
+      "generating": "AIが生成中...",
+      "prompt": "プロジェクトの内容を入力してください",
+      "promptPlaceholder": "例: Webサイトのデザインとフロントエンド開発を行いました。"
+    },
+    "pdf": {
+      "preview": "プレビュー",
+      "download": "PDFダウンロード"
+    },
+    "empty": "請求書がまだありません。最初の請求書を作成しましょう！"
+  },
+  "templates": {
+    "title": "テンプレート選択",
+    "subtitle": "請求書のデザインを選択してください。",
+    "select": "このテンプレートを選択",
+    "selected": "選択中"
+  },
+  "settings": {
+    "title": "設定",
+    "profile": "プロフィール",
+    "plan": "プラン管理",
+    "currentPlan": "現在のプラン",
+    "upgrade": "アップグレード",
+    "language": "言語",
+    "languageDescription": "アプリの表示言語を変更します。"
+  },
+  "auth": {
+    "loginTitle": "ログイン",
+    "loginSubtitle": "アカウントにログインして請求書を管理しましょう。",
+    "googleLogin": "Googleでログイン",
+    "terms": "ログインすることで、利用規約とプライバシーポリシーに同意したものとみなされます。"
+  }
+}
