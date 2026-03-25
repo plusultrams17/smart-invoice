@@ -47,10 +47,6 @@ export default async function LocaleLayout({
 
   return (
     <html lang={locale}>
-      <head>
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-      </head>
       <body className="antialiased">
         <NextIntlClientProvider messages={messages}>
           <AuthProvider>{children}</AuthProvider>
