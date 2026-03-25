@@ -42,8 +42,8 @@ export function InvoiceForm({ initialData }: InvoiceFormProps) {
   const [clientAddress, setClientAddress] = useState(initialData?.client_address || "");
   const [clientCompany, setClientCompany] = useState(initialData?.client_company || "");
 
-  const [senderName, setSenderName] = useState(initialData?.sender_name || "田中太郎");
-  const [senderEmail, setSenderEmail] = useState(initialData?.sender_email || "tanaka@example.com");
+  const [senderName, setSenderName] = useState(initialData?.sender_name || "田中 誠");
+  const [senderEmail, setSenderEmail] = useState(initialData?.sender_email || "tanaka@tanaka-paint.co.jp");
   const [senderAddress, setSenderAddress] = useState(initialData?.sender_address || "");
   const [senderCompany, setSenderCompany] = useState(initialData?.sender_company || "");
   const [registrationNumber, setRegistrationNumber] = useState(

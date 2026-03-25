@@ -118,7 +118,7 @@
       },
       "pro": {
         "name": "プロ",
-        "price": "¥1,480",
+        "price": "¥1,980",
         "period": "月額（税込）",
         "cta": "14日間無料で試す",
         "popular": "おすすめ",
@@ -270,14 +270,14 @@
     "benefit3": "透かしなしのプロフェッショナルなPDF",
     "benefit4": "全テンプレート利用可能",
     "cta": "14日間無料で試す",
-    "price": "¥1,480/月（税込）",
+    "price": "¥1,980/月（税込）",
     "guarantee": "14日間の無料トライアル。いつでもキャンセル可能。"
   },
   "auth": {
     "loginTitle": "ログイン",
     "loginSubtitle": "アカウントにログインして請求書を管理しましょう。",
     "googleLogin": "Googleでログイン",
-    "terms": "ログインすることで、{termsLink}と{privacyLink}に同意したものとみなされます。",
+    "terms": "ログインすることで、<termsLink>利用規約</termsLink>と<privacyLink>プライバシーポリシー</privacyLink>に同意したものとみなされます。",
     "termsOfService": "利用規約",
     "privacyPolicy": "プライバシーポリシー"
   },

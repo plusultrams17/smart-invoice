@@ -118,7 +118,7 @@
       },
       "pro": {
         "name": "Pro",
-        "price": "¥1,480",
+        "price": "¥1,980",
         "period": "/month (tax incl.)",
         "cta": "Start 14-Day Free Trial",
         "popular": "Recommended",
@@ -270,14 +270,14 @@
     "benefit3": "Watermark-free professional PDFs",
     "benefit4": "All templates available",
     "cta": "Start 14-Day Free Trial",
-    "price": "¥1,480/month (tax incl.)",
+    "price": "¥1,980/month (tax incl.)",
     "guarantee": "14-day free trial. Cancel anytime."
   },
   "auth": {
     "loginTitle": "Login",
     "loginSubtitle": "Sign in to manage your invoices.",
     "googleLogin": "Sign in with Google",
-    "terms": "By signing in, you agree to our {termsLink} and {privacyLink}.",
+    "terms": "By signing in, you agree to our <termsLink>Terms of Service</termsLink> and <privacyLink>Privacy Policy</privacyLink>.",
     "termsOfService": "Terms of Service",
     "privacyPolicy": "Privacy Policy"
   },

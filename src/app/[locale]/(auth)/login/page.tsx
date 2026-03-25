@@ -62,7 +62,24 @@ export default function LoginPage() {
           </Button>
 
           <p className="mt-4 text-center text-xs text-gray-500">
-            {t("auth.terms")}
+            {t.rich("auth.terms", {
+              termsLink: (chunks) => (
+                <Link
+                  href="/legal/terms"
+                  className="text-primary-600 hover:underline"
+                >
+                  {chunks}
+                </Link>
+              ),
+              privacyLink: (chunks) => (
+                <Link
+                  href="/legal/privacy"
+                  className="text-primary-600 hover:underline"
+                >
+                  {chunks}
+                </Link>
+              ),
+            })}
           </p>
         </div>
       </div>

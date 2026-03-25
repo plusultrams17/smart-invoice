@@ -29,7 +29,7 @@ export const PLANS = {
   pro: {
     id: "pro",
     name: { ja: "プロ", en: "Pro" },
-    price: 1480,
+    price: 1980,
     invoiceLimit: Infinity,
     hasAi: true,
     hasWatermark: false,

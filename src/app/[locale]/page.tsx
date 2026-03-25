@@ -32,7 +32,7 @@ function JsonLd() {
       {
         "@type": "Offer",
         name: "プロプラン",
-        price: "1480",
+        price: "1980",
         priceCurrency: "JPY",
         priceValidUntil: "2027-12-31",
       },
